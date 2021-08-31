@@ -1,0 +1,33 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+#root {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas: 
+    "header header"
+    "nav nav"
+    "aside main"
+    "footer footer";
+}
+header {
+    grid-area: header;
+}
+nav {
+    grid-area: nav;
+}
+aside {
+    grid-area: aside;
+}
+main {
+    grid-area: main;
+}
+footer {
+    grid-area: footer;
+}
