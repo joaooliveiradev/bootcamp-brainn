@@ -1,2 +1,2 @@
-const Main = () => <main>Conteúdo</main>
+const Main = ({ children }) => <main>{children}</main>
 export default Main

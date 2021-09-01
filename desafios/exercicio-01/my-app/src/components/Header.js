@@ -1,2 +1,2 @@
-const Header = () => <header>Header</header>
+const Header = ({ children }) => <header>{children}</header>
 export default Header
