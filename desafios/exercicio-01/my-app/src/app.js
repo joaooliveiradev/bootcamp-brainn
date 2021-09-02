@@ -1,14 +1,14 @@
-import Header from './components/Header';
-import Nav from './components/Nav';
-import Aside from './components/Aside';
-import Main from './components/Main';
-import Section from './components/Section';
-import Footer from './components/Footer';
-import Article from './components/Article';
-import Title from './components/Title';
-import Button from './components/Button';
-import Paragraph from './components/Paragraph';
-import PlayerVideo from './components/PlayerVideo';
+import Header from './components/header';
+import Nav from './components/nav';
+import Aside from './components/aside';
+import Main from './components/main';
+import Section from './components/section';
+import Footer from './components/footer';
+import Article from './components/article';
+import Title from './components/title';
+import Button from './components/button';
+import Paragraph from './components/paragraph';
+import PlayerVideo from './components/playervideo';
 const App = () => {
     return (
         <>
