@@ -1,9 +1,9 @@
-const LinkList = ({ posts, className }) => {
+const LinkList = ({ posts, handleClick, className }) => {
     return (
         <ul className={className}>
             {posts.map((post) => (
                 < li key={post.id} >
-                    <a href="/">{post.title}</a>
+                    <a href="/" onClick={(e) => handleClick(e, post.id)}>{post.title}</a>
                 </li>
             ))
             }

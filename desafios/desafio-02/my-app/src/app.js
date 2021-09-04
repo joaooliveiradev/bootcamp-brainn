@@ -108,12 +108,19 @@ const posts = [
 const App = () => {
     const [title, setTitle] = useState(posts[0].title)
     const [content, setContent] = useState(posts[0].content)
+
+    function handlePost(e, clickId) {
+        e.preventDefault();
+        const clickedPost = posts.filter((post) => post.id === clickId);
+        setTitle(clickedPost[0].title);
+        setContent(clickedPost[0].content);
+    }
     return (
         <>
             <Header><Title sizeHeading="h1">TudoMassa</Title></Header>
             <Nav><Title sizeHeading="h2">Esse exercício foi muito Massa de fazer</Title></Nav>
             <Aside>
-                <LinkList posts={posts} className="LinksList" />
+                <LinkList posts={posts} handleClick={handlePost} className="LinksList" />
             </Aside>
             <Main>
                 <Section>
