@@ -4,7 +4,11 @@ import Aside from './components/aside';
 import Main from './components/main';
 import Footer from './components/footer';
 import Title from './components/title';
-import LinkList from './components/linklist';
+import LinkList from './components/link-list';
+import Section from './components/section';
+import Article from './components/article';
+import Post from './components/post';
+import { useState } from 'react';
 const posts = [
     {
         id: 1,
@@ -102,15 +106,21 @@ const posts = [
     }
 ]
 const App = () => {
+    const [title, setTitle] = useState(posts[0].title)
+    const [content, setContent] = useState(posts[0].content)
     return (
         <>
-            <Header children="Header" />
-            <Nav children="Menu" />
+            <Header><Title sizeHeading="h1">TudoMassa</Title></Header>
+            <Nav><Title sizeHeading="h2">Esse exercício foi muito Massa de fazer</Title></Nav>
             <Aside>
                 <LinkList posts={posts} className="LinksList" />
             </Aside>
             <Main>
-
+                <Section>
+                    <Article>
+                        <Post state={{ title, content }} />
+                    </Article>
+                </Section>
             </Main>
             <Footer>Footer</Footer>
         </>
