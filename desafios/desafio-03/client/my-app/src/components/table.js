@@ -13,13 +13,22 @@ const Table = ({ cars, handleDelete }) => {
                     </tr>
                 </thead>
                 <tbody>
+                    {cars.length === 0 && (
+                        <tr>
+                            <td colSpan={6}>Nenhum carro encontrado</td>
+                        </tr>
+                    )}
                     {cars.map((car) => (
                         <tr key={car.id}>
-                            <td>{car.imagemURL}</td>
+                            <td><img className="carImage" src={car.imagemURL} alt="imagem Carro" /></td>
                             <td>{car.modelo}</td>
                             <td>{car.ano}</td>
                             <td>{car.placa}</td>
-                            <td><div style={{ backgroundColor: car.color }}>{car.color}</div></td>
+                            <td><div style={{
+                                width: '100px',
+                                height: '100px',
+                                backgroundColor: car.color
+                            }} /></td>
                             <td><button onClick={() => handleDelete(car.id)}>Excluir</button></td>
                         </tr>
                     ))}

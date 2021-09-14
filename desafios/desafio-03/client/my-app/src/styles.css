@@ -7,3 +7,6 @@ body{
 form label {
     display: block;
 }
+.carImage{
+    max-width: 100px;
+}

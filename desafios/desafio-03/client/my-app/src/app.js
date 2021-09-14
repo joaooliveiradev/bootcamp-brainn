@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 import Form from "./components/form";
 import Table from "./components/table";
 
-//jogar os dados na table
-//no map dosxz dados na table fazer um elemento q vai disparar o delete depois e excluir
-
 const baseURL = 'http://localhost:3001/api/';
 
 const App = () => {
     const [cars, setCars] = useState([]);
+    useEffect(() => {
+        getCars();
+    }, [])
     async function getCars() {
         const result = await get(`${baseURL}`);
         setCars(result);
@@ -27,21 +27,12 @@ const App = () => {
             ...prevState,
             dataCars
         ]);
+        e.target.reset();
     }
-
     async function asyncDeleteCars(clickId) {
-        await deleteCars(`${baseURL}`, { deleteId: clickId });
-        getCars();
-        /*
-        usei get cars aqui mas preciso receberr um array de volta como resultado e setar no estado, ai o use effect será 
-        executado o get será usado nele, get cars não pode ficar aqui arrumar
-
-        commit apenas para pausa para faculdade
-        */
+        const result = await deleteCars(`${baseURL}`, { deleteId: clickId });
+        setCars(result);
     }
-    useEffect(() => {
-        getCars();
-    }, [])
     return (
         <>
             <Form handleSubmit={postCars} />

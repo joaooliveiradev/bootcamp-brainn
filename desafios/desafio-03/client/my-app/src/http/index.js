@@ -2,9 +2,7 @@ const request = (url, headers) =>
     fetch(url, headers)
         .then(response => response.json())
         .catch(e => ({ error: true, message: e.message }));
-
 export const get = (url) => request(url)
-
 export const post = (url, data) => {
     return request(url, {
         method: 'POST',

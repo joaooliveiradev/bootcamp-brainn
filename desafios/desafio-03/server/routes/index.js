@@ -17,8 +17,8 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/', (req, res) => {
-    delete cars[req.body.deleteId];
-    res.json({ message: `Id ${req.body.deleteId} excluido com sucesso!` })
+    delete cars[req.body.deleteId]
+    res.json(Object.values(cars))
 })
 
 module.exports = router
